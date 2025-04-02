@@ -4,8 +4,6 @@ author: "Zachary Felix"
 format: html
 embed-resources: true
 editor: source
-  markdown: 
-    wrap: 72
 execute: 
   echo: true
   warning: false
@@ -65,7 +63,8 @@ ggplot(data = mpg,
 7.  Using code chunk options, make it so that these plots are printed side-by-side:
 
 ```{r}
-
+#| layout-ncol: 2
+#| message: false
 ggplot(data = mpg, 
        mapping = aes(y = manufacturer, x = hwy)) + 
   geom_boxplot() +
@@ -87,12 +86,14 @@ ggplot(data = mpg,
 8.  Using code chunk options, make it so this chunk shows the code but not the output:
 
 ```{r}
+#| eval: false
 2 + 2
 ```
 
 9.  Using code chunk options, make it so the file can still knit even though this chunk has an error
 
 ```{r}
+#| eval: false
 2 + a
 ```
 
